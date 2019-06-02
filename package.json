@@ -16,7 +16,6 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server --open --mode development",
-    "dev": "webpack-dev-server --open --mode development",
     "build": "NODE_ENV=production npm run clean && webpack -p",
     "test": "jest",
     "test:watch": "jest --watch",
