@@ -1,0 +1,71 @@
+{
+  "name": "mymoviesapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-js-pagination": "^3.0.2",
+    "react-scripts": "2.1.8",
+    "reactstrap": "^8.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server --open --mode development",
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "NODE_ENV=production npm run clean && webpack -p",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": ["<rootDir>__tests__/setup/setupJest.js", "<rootDir>__tests__/setup/setupEnzyme.js"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/setup/"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.2",
+    "enzyme-to-json": "^3.3.5",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "jest-fetch-mock": "^2.1.2",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "react-redux": "^7.0.3",
+    "react-test-renderer": "^16.8.6",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
+    "redux-saga": "^1.0.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Movie /> component should render correctly 1`] = `
+<div
+  className="col s12 m6 l3 movies-card"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image waves-effect waves-block waves-light"
+    >
+      <img
+        alt="Avengers"
+        className="movie-img"
+        src="https://image.tmdb.org/t/p/w500/img"
+      />
+    </div>
+  </div>
+  <div
+    className="card-content"
+  >
+    <button
+      className="waves-effect waves-light btn-small overview"
+      onClick={[Function]}
+    >
+        Overview 
+    </button>
+    <button
+      className="waves-effect waves-light btn-small deleteBtn"
+      onClick={[Function]}
+    >
+       Delete 
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> should render correctly 1`] = `
+<div
+  className="main-loader"
+>
+  <div
+    className="preloader-wrapper small active"
+  >
+    <div
+      className="spinner-layer spinner-green-only"
+    >
+      <div
+        className="circle-clipper left"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="gap-patch"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+      <div
+        className="circle-clipper right"
+      >
+        <div
+          className="circle"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="loading-text"
+  >
+    Loading Please wait....
+  </div>
+</div>
+`;

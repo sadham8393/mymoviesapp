@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert /> should render correctly 1`] = `
+<nav
+  className="show info alert-container"
+>
+  <div
+    className="nav-wrapper"
+  >
+    <ul
+      className="left"
+    >
+      <h5 />
+    </ul>
+    <ul
+      className="right"
+    >
+      <i
+        className="small material-icons alert-close-btn "
+        onClick={[MockFunction]}
+      >
+         close 
+      </i>
+    </ul>
+  </div>
+</nav>
+`;

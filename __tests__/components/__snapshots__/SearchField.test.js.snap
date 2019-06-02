@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchField /> component should render correctly 1`] = `
+<div
+  className="container search-container"
+>
+  <form
+    action=""
+    className="row"
+    onSubmit={[MockFunction]}
+  >
+    <div
+      className="input-field col s4"
+    >
+      <input
+        className="validate"
+        id="searchInput"
+        name="searchterm"
+        onChange={[Function]}
+        placeholder="Search Movie/Tv"
+        required={true}
+        type="text"
+      />
+      <span
+        className="helper-text"
+        data-error="Please enter Movie/Tv Series and Search."
+      />
+    </div>
+    <div
+      className="input-field col s2"
+    >
+      <select
+        className="browser-default"
+        name="tvMovieType"
+        onChange={[Function]}
+      >
+        <option
+          defaultValue={true}
+          disabled={true}
+          value=""
+        >
+          Search By
+        </option>
+        <option
+          value="multi"
+        >
+          All
+        </option>
+        <option
+          value="movie"
+        >
+          Movie
+        </option>
+        <option
+          value="tv"
+        >
+          TV
+        </option>
+      </select>
+    </div>
+    <div
+      className="input-field col s2"
+    >
+      <button
+        className="waves-effect waves-light btn"
+        disabled={false}
+        onClick={[MockFunction]}
+      >
+        <i
+          className="material-icons right"
+        >
+          search
+        </i>
+        Search
+      </button>
+    </div>
+  </form>
+</div>
+`;

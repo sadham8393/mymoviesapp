@@ -1,0 +1,18 @@
+$button-background-color : #D58429 ;
+$delete-background-color : #c90404;
+$base-color: #030000;
+$white-color : #fff;
+$home-background-color : #767A75;
+$modal-primary-button : #0A0938;
+$modal-footer-background-color : #2CEE87;
+$modal-text-color : #121537;
+$modal-body-backgrond-color : #040111;
+
+
+@mixin pointer-mouse {
+    cursor:pointer;
+}
+
+@mixin margin-top-10px {
+    margin-top: 10px;
+}

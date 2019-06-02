@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> component should render correctly 1`] = `
+<div
+  className="home-container"
+>
+  <nav
+    className="navbar"
+  >
+    <div
+      className="nav-wrapper nav-header"
+    >
+      <h2
+        className="brand-logo"
+        onClick={[Function]}
+      >
+         My Movies App 
+      </h2>
+    </div>
+  </nav>
+  <nav
+    className="hide alert-container"
+  >
+    <div
+      className="nav-wrapper"
+    >
+      <ul
+        className="left"
+      >
+        <h5>
+          
+        </h5>
+      </ul>
+      <ul
+        className="right"
+      >
+        <i
+          className="small material-icons alert-close-btn "
+          onClick={[Function]}
+        >
+           close 
+        </i>
+      </ul>
+    </div>
+  </nav>
+  <div
+    className="container search-container"
+  >
+    <form
+      action=""
+      className="row"
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-field col s4"
+      >
+        <input
+          className="validate"
+          id="searchInput"
+          name="searchterm"
+          onChange={[Function]}
+          placeholder="Search Movie/Tv"
+          required={true}
+          type="text"
+        />
+        <span
+          className="helper-text"
+          data-error="Please enter Movie/Tv Series and Search."
+        />
+      </div>
+      <div
+        className="input-field col s2"
+      >
+        <select
+          className="browser-default"
+          name="tvMovieType"
+          onChange={[Function]}
+        >
+          <option
+            defaultValue={true}
+            disabled={true}
+            value=""
+          >
+            Search By
+          </option>
+          <option
+            value="multi"
+          >
+            All
+          </option>
+          <option
+            value="movie"
+          >
+            Movie
+          </option>
+          <option
+            value="tv"
+          >
+            TV
+          </option>
+        </select>
+      </div>
+      <div
+        className="input-field col s2"
+      >
+        <button
+          className="waves-effect waves-light btn"
+          disabled={true}
+          onClick={[Function]}
+        >
+          <i
+            className="material-icons right"
+          >
+            search
+          </i>
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    className="container movies-container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col s12"
+      >
+        <div
+          className="col s12 m6 l3 movies-card"
+        >
+          <div
+            className="card"
+          >
+            <div
+              className="card-image waves-effect waves-block waves-light"
+            >
+              <img
+                alt="Avengers: Infinity War"
+                className="movie-img"
+                src="https://image.tmdb.org/t/p/w500//7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+              />
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <button
+              className="waves-effect waves-light btn-small overview"
+              onClick={[Function]}
+            >
+                Overview 
+            </button>
+            <button
+              className="waves-effect waves-light btn-small deleteBtn"
+              onClick={[Function]}
+            >
+               Delete 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

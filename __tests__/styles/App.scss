@@ -1,0 +1,137 @@
+@import "./variables.scss";
+
+@mixin col-attr {
+  .col {
+    border: 0px;
+  }
+}
+
+@mixin btn-class($backgrond-color, $text-color) {
+  background-color: $backgrond-color;
+  color: $text-color;
+  margin-right: 10px;
+}
+
+
+.home-container {
+  background :$home-background-color;
+  .btn, .btn-small{
+    @include btn-class($button-background-color, $white-color); 
+  }  
+  .alert-container {
+    padding : 20px;
+  }
+  .alert-close-btn {
+    @include pointer-mouse;
+    line-height: 25px !important;
+  }
+}
+
+.nav-header {
+  .brand-logo {
+    position : relative;
+    @include pointer-mouse;
+  }
+}
+
+.navbar {
+  color: #fff;
+  background-color: $base-color;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+.search-container {
+  @include col-attr;
+}
+
+.movies-container {
+  @include col-attr;
+  .deleteBtn {
+    @include btn-class($delete-background-color, $white-color);
+  }
+}
+
+.movie-img {
+  width: 100%;
+  height: 360px;
+}
+
+.movies-card {
+  margin-bottom: 10px;
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: .25rem;
+  }
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.main {
+  .alert {
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+  }
+}
+
+.error {
+  background-color: red;
+  @include margin-top-10px;
+}
+
+.success {
+  background-color: green;
+  @include margin-top-10px;
+}
+
+.info {
+  background-color: #0A05FC;
+  @include margin-top-10px;
+}
+
+.col {
+  border: 1px solid;
+}
+
+.modal { 
+  background: none !important;
+  border : none;
+  max-height: 100%;
+  .modal-content {
+    padding: 0px;
+  }
+  .modal-footer {
+    border-radius: 0 0 2px 2px;
+    background-color: $modal-footer-background-color;
+    height: 43px;
+    width: 100%;
+    text-align: right;
+  }
+  .modal-header {
+    background-color: $modal-footer-background-color;
+    color : $modal-text-color;
+    padding: 15px;
+  }
+  .modal-body {
+    background-color: $modal-body-backgrond-color;
+    color : $white-color;
+  }
+  .btn-primary {
+    background-color: $button-background-color;
+  }
+}
+
+.label{
+  font-weight: 500;
+}

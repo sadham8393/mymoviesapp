@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaginationComponent /> should render correctly 1`] = `
+<div
+  className="container movies-container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col s4"
+    >
+      <ul
+        className="pagination"
+      >
+        <li
+          className="disabled"
+          onClick={[Function]}
+        >
+          <a
+            className=""
+            href="#"
+          >
+            First
+          </a>
+        </li>
+        <li
+          className="disabled"
+          onClick={[Function]}
+        >
+          <a
+            className=""
+            href="#"
+          >
+            Prev
+          </a>
+        </li>
+        <li
+          className="active"
+          onClick={[Function]}
+        >
+          <a
+            className="undefined"
+            href="#"
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="disabled"
+          onClick={[Function]}
+        >
+          <a
+            className=""
+            href="#"
+          >
+            Next
+          </a>
+        </li>
+        <li
+          className="disabled"
+          onClick={[Function]}
+        >
+          <a
+            className=""
+            href="#"
+          >
+            Last
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
