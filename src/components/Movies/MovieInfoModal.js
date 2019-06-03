@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const MovieInfoModal = (props) =>{
     let { title, name, overview, first_air_date, release_date} = props.movie;
     return (
-        <Modal isOpen= {props.viewInfoModalOpen} >
+        <Modal centered isOpen= {props.viewInfoModalOpen} >
                 <ModalHeader close={<button className="close" onClick={props.closeInfoModal}>&times;</button>} > {title ? title : name} </ModalHeader>
                 <ModalBody>
                     <div className ="container movies-container">

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { INPUT_TYPE_TEXT} from '../utils/constants';
+import { INPUT_TYPE_TEXT } from '../utils/constants';
+import { deleteMovieMessage } from '../utils/utils';
 import { connect } from 'react-redux';
 import SearchField from './SearchField';
 import Header from './Nav';
@@ -9,6 +10,7 @@ import MovieInfoModal from './Movies/MovieInfoModal';
 import * as actions from '../actions/moviesAction';
 import Alert from './Common/Alert';
 import Loader from './Common/Loader';
+import ConfirmModal from './Common/ConfirmModal';
 
 class Home extends Component {
     constructor(){
@@ -28,7 +30,10 @@ class Home extends Component {
           alertClass : "hide",
           isLoading : false,
           infoModalOpen : false,
-          currentMovie : null
+          currentMovie : null,
+          confirmModalOpen : false,
+          movieId : "", 
+          movieName : ""
         }
     }
 
@@ -156,12 +161,38 @@ class Home extends Component {
           )
       }
     }
-    onDeleteClick = (movie) => {
-      let moviesList = this.state.moviesList,
-          movieId = movie.id;
-      this.props.deleteTvMovie(movieId, moviesList);
-
+    renderConfirmModal = () =>{
+      if(this.state.confirmModalOpen){
+          return (
+            <ConfirmModal confirmModalOpen = {this.state.confirmModalOpen} confirmMessage = {deleteMovieMessage(this.state.movieName)} 
+            title = {`Delete ${this.state.movieName}`} onYesClick = {this.confirmYesClick} onNoClick = {this.confirmNoClick}/>
+          )
+      }
     }
+
+    confirmYesClick = () => {
+      let moviesList = this.state.moviesList,
+          movieId = this.state.movieId;
+          this.props.deleteTvMovie(movieId, moviesList);
+      this.setState(prevState => ({
+        confirmModalOpen: !prevState.confirmModalOpen, movieId : "", movieName : ""
+      }));
+    }
+
+    confirmNoClick = () => {
+      this.setState(prevState => ({
+        confirmModalOpen: !prevState.confirmModalOpen, movieId : "", movieName : ""
+      }));
+    }
+
+    onDeleteClick = (movie) => {
+      let movieId = movie.id,
+          movieName = movie.name || movie.title;
+      this.setState(prevState => ({
+        confirmModalOpen: !prevState.confirmModalOpen, movieId : movieId, movieName : movieName
+      }));
+    }
+
     viewInfoModal = (currentMovieDetails) => {
         this.setState({
           infoModalOpen: true, currentMovie : currentMovieDetails
@@ -181,6 +212,7 @@ class Home extends Component {
         <div className = "home-container">
             {this.renderLoader()}
             {this.renderInfoModal()}
+            {this.renderConfirmModal()}
             <Header onHeaderClick = {this.headerClick}/>
             <Alert alertClass = {this.state.alertClass} alertClose = {this.closeAlert} alertMessage = {alertMessage}/>
             <SearchField handleSearch = {this.handleSearch} handleChange = {this.handleChange} 

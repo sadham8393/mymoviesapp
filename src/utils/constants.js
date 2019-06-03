@@ -14,6 +14,7 @@ export const INPUT_TYPE_SELECT = "select";
 export const NOT_AVAILABLE = "Not Available";
 
 
+
 //Action Constants
 export const FETCH_TRENDING_MOVIES = "FETCH_TRENDING_MOVIES";
 export const FETCH_TV_MOVIES = "FETCH_TV_MOVIES";

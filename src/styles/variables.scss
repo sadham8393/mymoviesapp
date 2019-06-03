@@ -8,11 +8,42 @@ $modal-footer-background-color : #2CEE87;
 $modal-text-color : #121537;
 $modal-body-backgrond-color : #040111;
 
-
 @mixin pointer-mouse {
     cursor:pointer;
 }
 
 @mixin margin-top-10px {
     margin-top: 10px;
+}
+
+@mixin modal-mixin($backgrond-color, $text-color, $body-backgrond-color, $primary-btn, $secondary-btn) {
+    background: none !important;
+    border : none;
+    max-height: 100%;
+    .modal-content {
+        padding: 0px;
+    }
+    .modal-footer {
+        border-radius: 0 0 2px 2px;
+        background-color: $backgrond-color;
+        height: 43px;
+        width: 100%;
+        text-align: right;
+    }
+    .modal-header {
+        background-color: $backgrond-color;
+        color : $text-color;
+        padding: 15px;
+    }
+    .modal-body {
+        background-color: $body-backgrond-color;
+        color : $white-color;
+    }
+    .btn-primary {
+        background-color: $primary-btn;
+        margin-right: 10px !important;
+    }
+    .btn-secondary {
+        background-color: $secondary-btn;
+    }
 }

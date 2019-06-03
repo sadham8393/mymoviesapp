@@ -1,0 +1,9 @@
+$confirm-modal-primary-button : #028509;
+$confirm-modal-secondary-button : #F4140D;
+$confirm-modal-background-color : #4D3FBD;
+$confirm-modal-text-color : #121537;
+$confirm-modal-body-backgrond-color : #040111;
+
+.confirmModal {
+    @include modal-mixin($confirm-modal-background-color, $modal-text-color, $modal-body-backgrond-color, $confirm-modal-primary-button, $confirm-modal-secondary-button);
+}

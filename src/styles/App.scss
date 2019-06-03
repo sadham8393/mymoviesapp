@@ -105,31 +105,7 @@
 }
 
 .modal { 
-  background: none !important;
-  border : none;
-  max-height: 100%;
-  .modal-content {
-    padding: 0px;
-  }
-  .modal-footer {
-    border-radius: 0 0 2px 2px;
-    background-color: $modal-footer-background-color;
-    height: 43px;
-    width: 100%;
-    text-align: right;
-  }
-  .modal-header {
-    background-color: $modal-footer-background-color;
-    color : $modal-text-color;
-    padding: 15px;
-  }
-  .modal-body {
-    background-color: $modal-body-backgrond-color;
-    color : $white-color;
-  }
-  .btn-primary {
-    background-color: $button-background-color;
-  }
+  @include modal-mixin($modal-footer-background-color, $modal-text-color, $modal-body-backgrond-color, $button-background-color, $button-background-color);
 }
 
 .label{

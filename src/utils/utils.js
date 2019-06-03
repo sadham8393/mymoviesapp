@@ -10,3 +10,9 @@ export function convertDate(date){
     }
     return NOT_AVAILABLE;
 }
+
+
+//Form the delete confirmation message
+export function deleteMovieMessage(movieName) {
+    return `Are you sure you want to delete ${movieName} ?`
+}
