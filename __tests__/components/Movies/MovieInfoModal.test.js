@@ -30,6 +30,22 @@ describe('<MovieInfoModal /> component', () => {
         expect(EnzymeToJson(component)).toMatchSnapshot();
     });
 
+    it('should render correctly with release date NA', () => {
+        testProps = {
+            movie : {
+                title : "Avengers", 
+                name : "Avengers", 
+                overview : "Avengers movie info", 
+                first_air_date : "" , 
+                release_date :""
+            },            
+            closeInfoModal : mockFunc,
+            viewInfoModalOpen : true
+        };
+        const component = mount(<MovieInfoModal {...testProps} />);
+        expect(EnzymeToJson(component)).toMatchSnapshot();
+    });
+
     it('should render Modal correctly and to be 1', () => {
         const modal = findByComponent(wrapper, Modal);
         expect(modal.length).toBe(1);

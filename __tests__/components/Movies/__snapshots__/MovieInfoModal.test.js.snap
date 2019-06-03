@@ -23,7 +23,7 @@ exports[`<MovieInfoModal /> component should render correctly 1`] = `
         "timeout": 150,
       }
     }
-    centered={false}
+    centered={true}
     fade={true}
     isOpen={true}
     keyboard={true}
@@ -56,7 +56,7 @@ exports[`<MovieInfoModal /> component should render correctly 1`] = `
               tabindex="-1"
             >
               <div
-                class="modal-dialog"
+                class="modal-dialog modal-dialog-centered"
                 role="document"
               >
                 <div
@@ -138,7 +138,7 @@ exports[`<MovieInfoModal /> component should render correctly 1`] = `
                 tabindex="-1"
               >
                 <div
-                  class="modal-dialog"
+                  class="modal-dialog modal-dialog-centered"
                   role="document"
                 >
                   <div
@@ -267,7 +267,7 @@ exports[`<MovieInfoModal /> component should render correctly 1`] = `
                 tabIndex="-1"
               >
                 <div
-                  className="modal-dialog"
+                  className="modal-dialog modal-dialog-centered"
                   role="document"
                 >
                   <div
@@ -323,6 +323,412 @@ exports[`<MovieInfoModal /> component should render correctly 1`] = `
                             </span>
                              
                             2019/12/03
+                          </p>
+                          <h6>
+                            Overview : 
+                          </h6>
+                          <p>
+                            Avengers movie info
+                          </p>
+                        </div>
+                      </div>
+                    </ModalBody>
+                    <ModalFooter
+                      tag="div"
+                    >
+                      <div
+                        className="modal-footer"
+                      >
+                        <Button
+                          color="primary"
+                          onClick={[MockFunction]}
+                          tag="button"
+                        >
+                          <button
+                            aria-label={null}
+                            className="btn btn-primary"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            OK
+                          </button>
+                        </Button>
+                      </div>
+                    </ModalFooter>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </Fade>
+          <Fade
+            appear={true}
+            baseClass="fade"
+            baseClassActive="show"
+            className="modal-backdrop"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={true}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            tag="div"
+            timeout={150}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={150}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal-backdrop fade"
+              />
+            </Transition>
+          </Fade>
+        </div>
+      </Portal>
+    </Portal>
+  </Modal>
+</MovieInfoModal>
+`;
+
+exports[`<MovieInfoModal /> component should render correctly with release date NA 1`] = `
+<MovieInfoModal
+  closeInfoModal={[MockFunction]}
+  movie={
+    Object {
+      "first_air_date": "",
+      "name": "Avengers",
+      "overview": "Avengers movie info",
+      "release_date": "",
+      "title": "Avengers",
+    }
+  }
+  viewInfoModalOpen={true}
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={true}
+    fade={true}
+    isOpen={true}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    returnFocusAfterClose={true}
+    role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
+    zIndex={1050}
+  >
+    <Portal
+      node={
+        <div
+          style="position: relative; z-index: 1050; display: block;"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="modal fade"
+              role="dialog"
+              style="display: block;"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog modal-dialog-centered"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                    >
+                       
+                      Avengers
+                       
+                    </h5>
+                    <button
+                      class="close"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <div
+                    class="modal-body"
+                  >
+                    <div
+                      class="container movies-container"
+                    >
+                      <p>
+                         
+                        <span
+                          class="label"
+                        >
+                           Release Date : 
+                        </span>
+                         
+                        Not Available
+                      </p>
+                      <h6>
+                        Overview : 
+                      </h6>
+                      <p>
+                        Avengers movie info
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="modal-footer"
+                  >
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-backdrop fade"
+            />
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            style="position: relative; z-index: 1050; display: block;"
+            tabindex="-1"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="modal fade"
+                role="dialog"
+                style="display: block;"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                      >
+                         
+                        Avengers
+                         
+                      </h5>
+                      <button
+                        class="close"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div
+                      class="modal-body"
+                    >
+                      <div
+                        class="container movies-container"
+                      >
+                        <p>
+                           
+                          <span
+                            class="label"
+                          >
+                             Release Date : 
+                          </span>
+                           
+                          Not Available
+                        </p>
+                        <h6>
+                          Overview : 
+                        </h6>
+                        <p>
+                          Avengers movie info
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="modal-footer"
+                    >
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                      >
+                        OK
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal-backdrop fade"
+              />
+            </div>
+          </div>
+        }
+      >
+        <div
+          className=""
+        >
+          <Fade
+            appear={true}
+            baseClass="fade"
+            baseClassActive="show"
+            className="modal"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            role="dialog"
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            tabIndex="-1"
+            tag="div"
+            timeout={300}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={300}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal fade"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <ModalHeader
+                      charCode={215}
+                      close={
+                        <button
+                          className="close"
+                          onClick={[MockFunction]}
+                        >
+                          ×
+                        </button>
+                      }
+                      closeAriaLabel="Close"
+                      tag="h5"
+                      wrapTag="div"
+                    >
+                      <div
+                        className="modal-header"
+                      >
+                        <h5
+                          className="modal-title"
+                        >
+                           
+                          Avengers
+                           
+                        </h5>
+                        <button
+                          className="close"
+                          onClick={[MockFunction]}
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </ModalHeader>
+                    <ModalBody
+                      tag="div"
+                    >
+                      <div
+                        className="modal-body"
+                      >
+                        <div
+                          className="container movies-container"
+                        >
+                          <p>
+                             
+                            <span
+                              className="label"
+                            >
+                               Release Date : 
+                            </span>
+                             
+                            Not Available
                           </p>
                           <h6>
                             Overview : 

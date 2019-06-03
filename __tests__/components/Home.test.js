@@ -156,5 +156,25 @@ describe('<Home /> component', () => {
         const newState = classInstance.state.currentMovie;
         expect(newState).toBe(null);
     });
+
+    it('confirmYesClick Method should update confirmModalOpen in state', () => {
+        const classInstance = wrapper.instance();
+        classInstance.confirmYesClick();
+        const newState = classInstance.state.confirmModalOpen;
+        expect(newState).toBe(true);
+    });
+
+    it('confirmNoClick Method should update confirmModalOpen in state', () => {
+        const classInstance = wrapper.instance();
+        classInstance.confirmNoClick();
+        const newState = classInstance.state.confirmModalOpen;
+        expect(newState).toBe(true);
+    });
     
+    it('onDeleteClick Method should update confirmModalOpen in state', () => {
+        const classInstance = wrapper.instance();
+        classInstance.confirmNoClick();
+        const newState = classInstance.state.confirmModalOpen;
+        expect(newState).toBe(true);
+    });
 });

@@ -10,8 +10,8 @@ const ConfirmModal = (props) =>{
                 {props.confirmMessage}
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" onClick={props.onYesClick}>Yes</Button>
-                <Button color="secondary" onClick={props.onNoClick}>No</Button>
+                <Button color="primary" className = "confirm-yes" onClick={props.onYesClick}>Yes</Button>
+                <Button color="secondary" className = "confirm-no" onClick={props.onNoClick}>No</Button>
             </ModalFooter>
         </Modal>
     );     
