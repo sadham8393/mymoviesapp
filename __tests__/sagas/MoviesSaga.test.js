@@ -1,5 +1,5 @@
 import { fetchTrendingMovies, fetchTvMovies, deleteTvMovie} from '../../src/sagas/MoviesSaga';
-import { MOVIES_FETCHED_SUCCESS, MOVIES_FETCHED_ERROR, SERVER_UNAVAILABE, DELETE_MOVIE_SUCCESS, DELETE_MOVIE_FAILURE
+import { MOVIES_FETCHED_SUCCESS, MOVIES_FETCHED_ERROR,MOVIES_FETCHED_NO_RESULTS, DELETE_MOVIE_SUCCESS, DELETE_MOVIE_FAILURE,NO_RESULTS_FOUND
 }  from '../../src/utils/constants';
 import { put, call} from 'redux-saga/effects';
 import { fetchTrendingListApi, fetchMoviesApi, deleteTvMovieApi } from '../../src/api/api'
@@ -9,7 +9,8 @@ import { fetchTrendingListApi, fetchMoviesApi, deleteTvMovieApi } from '../../sr
  */
 describe('Movies/Tv sagas ', () => { 
     //Mock data for testing
-    const mockData = {
+    const mockData = [
+      {
         "page": 1,
         "results": [
           {
@@ -31,13 +32,21 @@ describe('Movies/Tv sagas ', () => {
         ],
         "total_pages": 1,
         "total_results": 1
-    };
-    const server_error = SERVER_UNAVAILABE;
+      },
+      {
+        "page": 1,
+        "total_results": 0
+      }
+    ];
+    const error = {error : "Something went wrong!"};
 
-    const deleteSuccess =  { moviesList : mockData , message : 'Success Hurray'};
+    const deleteSuccess =  { moviesList : mockData[0] , message : 'Success Hurray'};
     ;
     const action = {queryParams : { pageNumber : 1, tvMovieType : "All", searchterm : "Avengers"}, 
-                    movieId : 299536, moviesList : mockData};
+                    movieId : 299536, moviesList : mockData[0]};
+
+    const noresultAction = {queryParams : { pageNumber : 1, tvMovieType : "All", searchterm : "father goose qwerrr"}, 
+    movieId : 299536, moviesList : mockData[0]};
     
     /**
      *  Test cases for initial fetching of movies/tv
@@ -49,10 +58,10 @@ describe('Movies/Tv sagas ', () => {
           expect(gen.next().value).toEqual(call(fetchTrendingListApi, pageNumber));
         });
         it('should dispatch a MOVIES_FETCHED_SUCCESS action if successful', () => {
-          expect(gen.next(mockData).value).toEqual(put({ type: MOVIES_FETCHED_SUCCESS, moviesList: mockData }));
+          expect(gen.next(mockData[0]).value).toEqual(put({ type: MOVIES_FETCHED_SUCCESS, moviesList: mockData[0] }));
         });
         it('should dispatch a MOVIES_FETCHED_ERROR action if unsuccessful', () => {
-          expect(gen.throw({ error: 'Something went wrong!' }).value).toEqual(put({ type: MOVIES_FETCHED_ERROR, error: server_error}));
+          expect(gen.throw(error).value).toEqual(put({ type: MOVIES_FETCHED_ERROR, error}));
         });
         it('should be done', () => {
           expect(gen.next().done).toEqual(true);
@@ -68,14 +77,24 @@ describe('Movies/Tv sagas ', () => {
           expect(gen.next().value).toEqual(call(fetchMoviesApi, action.queryParams));
         });
         it('should dispatch a MOVIES_FETCHED_SUCCESS action if successful', () => {
-            expect(gen.next(mockData).value).toEqual(put({ type: MOVIES_FETCHED_SUCCESS, moviesList: mockData }));
+            expect(gen.next(mockData[0]).value).toEqual(put({ type: MOVIES_FETCHED_SUCCESS, moviesList: mockData[0] }));
         });
         it('should dispatch a MOVIES_FETCHED_ERROR action if unsuccessful', () => {
-            expect(gen.throw({ error: 'Something went wrong!' }).value).toEqual(put({ type: MOVIES_FETCHED_ERROR, error: server_error}));
-          });
-          it('should be done', () => {
-            expect(gen.next().done).toEqual(true);
-          });
+            expect(gen.throw(error).value).toEqual(put({ type: MOVIES_FETCHED_ERROR, error}));
+        });
+        it('should be done', () => {
+          expect(gen.next().done).toEqual(true);
+        });
+    });
+
+    describe('fetchTvMovies()', () => {
+      const gen = fetchTvMovies(noresultAction);
+      it('should call the API', () => {
+        expect(gen.next().value).toEqual(call(fetchMoviesApi, noresultAction.queryParams));
+      });
+      it('should dispatch a MOVIES_FETCHED_NO_RESULTS action if successful', () => {
+        expect(gen.next(mockData[1]).value).toEqual(put({ type: MOVIES_FETCHED_NO_RESULTS, moviesList: mockData[1], info: NO_RESULTS_FOUND }));
+      });
     });
 
     /**
@@ -88,7 +107,7 @@ describe('Movies/Tv sagas ', () => {
             expect(gen.next().value).toEqual(call(deleteTvMovieApi, movieId, moviesList));
         });
         it('should dispatch a DELETE_MOVIE_SUCCESS action if successful', () => {
-            expect(gen.next(deleteSuccess).value).toEqual(put({ type: DELETE_MOVIE_SUCCESS, moviesList: mockData, success: deleteSuccess.message }));
+            expect(gen.next(deleteSuccess).value).toEqual(put({ type: DELETE_MOVIE_SUCCESS, moviesList: mockData[0], success: deleteSuccess.message }));
         });
 
         it('should dispatch a DELETE_MOVIE_FAILURE action if successful', () => {

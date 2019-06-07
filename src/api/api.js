@@ -3,11 +3,31 @@ import axios from 'axios';
 
 
 export function fetchTrendingListApi(pageNumber) {
-    return axios.get(`${MOVIEDB_PATH}${TRENDING_DAY_URL}${REACT_MOVIEDB_API_KEY}&page=${pageNumber}`).then(response => response.data );
+    return axios.get(`${MOVIEDB_PATH}${TRENDING_DAY_URL}${REACT_MOVIEDB_API_KEY}&page=${pageNumber}`)
+    .then(response => {
+        return response.data 
+    })
+    .catch(error => {
+        if(error.response){
+            throw error.response.data.status_message;
+        } else if(error.message){
+            throw error.message;
+        }
+    });
 }
 
 export function fetchMoviesApi({tvMovieType, searchterm, pageNumber }) {
-    return axios.get(`${MOVIEDB_PATH}search/${tvMovieType}${REACT_MOVIEDB_API_KEY}&query=${searchterm}&page=${pageNumber}`).then(response => response.data );
+    return axios.get(`${MOVIEDB_PATH}search/${tvMovieType}${REACT_MOVIEDB_API_KEY}&query=${searchterm}&page=${pageNumber}`)
+    .then(response => {
+        return response.data 
+    })
+    .catch(error => {
+        if(error.response){
+            throw error.response.data.status_message;
+        } else if(error.message){
+            throw error.message;
+        }
+    });
 }
 
 export function deleteTvMovieApi(movieId, moviesList) {

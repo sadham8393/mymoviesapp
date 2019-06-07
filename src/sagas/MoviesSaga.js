@@ -12,14 +12,7 @@ export function* fetchTrendingMovies(action) {
     try {
         const payload = yield call(fetchTrendingListApi, pageNumber);
         yield put({ type: MOVIES_FETCHED_SUCCESS, moviesList: payload });
-    } catch (err) {
-        let errorResponse = JSON.parse(JSON.stringify(err)),
-            error;
-        if(errorResponse.response){
-            error = errorResponse.response.data.status_message;
-        } else {
-            error = SERVER_UNAVAILABE;
-        }
+    } catch (error) {
         yield put({ type: MOVIES_FETCHED_ERROR, error });
     }
 }
@@ -32,14 +25,7 @@ export function* fetchTvMovies(action) {
         } else {
             yield put({ type: MOVIES_FETCHED_NO_RESULTS, moviesList: payload, info: NO_RESULTS_FOUND });
         }
-    } catch (err) {
-        let errorResponse = JSON.parse(JSON.stringify(err)),
-            error;
-        if(errorResponse.response){
-            error = errorResponse.response.data.status_message;
-        } else {
-            error = SERVER_UNAVAILABE;
-        }
+    } catch (error) {
         yield put({ type: MOVIES_FETCHED_ERROR, error });
     }
 }
@@ -53,7 +39,6 @@ export function* deleteTvMovie(action) {
       yield put({ type: DELETE_MOVIE_FAILURE, error:`Delete movies/tv failed. ${error.message}`});
     }
 }
-
 
 export function* actionWatcher() {
     yield takeLatest(FETCH_TRENDING_MOVIES, fetchTrendingMovies);
