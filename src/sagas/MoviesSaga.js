@@ -1,10 +1,8 @@
-
 import { fetchTrendingListApi, fetchMoviesApi, deleteTvMovieApi } from '../api/api'
-import { takeLatest, put, call} from 'redux-saga/effects';
+import { put, call} from 'redux-saga/effects';
 import {
-    FETCH_TRENDING_MOVIES, FETCH_TV_MOVIES, MOVIES_FETCHED_SUCCESS, MOVIES_FETCHED_ERROR, 
-    MOVIES_FETCHED_NO_RESULTS, NO_RESULTS_FOUND, SERVER_UNAVAILABE, DELETE_TV_MOVIES,
-    DELETE_MOVIE_SUCCESS, DELETE_MOVIE_FAILURE
+    MOVIES_FETCHED_SUCCESS, MOVIES_FETCHED_ERROR, 
+    MOVIES_FETCHED_NO_RESULTS, NO_RESULTS_FOUND, DELETE_MOVIE_SUCCESS, DELETE_MOVIE_FAILURE
 } from '../utils/constants';
 
 export function* fetchTrendingMovies(action) {
@@ -38,10 +36,4 @@ export function* deleteTvMovie(action) {
     } catch (error) {
       yield put({ type: DELETE_MOVIE_FAILURE, error:`Delete movies/tv failed. ${error.message}`});
     }
-}
-
-export function* actionWatcher() {
-    yield takeLatest(FETCH_TRENDING_MOVIES, fetchTrendingMovies);
-    yield takeLatest(FETCH_TV_MOVIES, fetchTvMovies);
-    yield takeLatest(DELETE_TV_MOVIES, deleteTvMovie);
 }
